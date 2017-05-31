@@ -60,8 +60,10 @@ end
 
 
 
-        updateGUI_gliderTable(handles,matrix.glider)
-
-
+        updateGUI_gliderTable(handles,dataMatrixGlider)
+    else
+        % call update Container table
+    end
+end
 end
 

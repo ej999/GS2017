@@ -24,7 +24,6 @@ try %To stop and indicate that Radio is not connected
 catch %if there is an error in try
     error = true; 
     msgbox ('No Serial Device on selected comport.');
-    fclose(ard);
 end
 
 if (error == false)
@@ -35,9 +34,10 @@ if (error == false)
     csvfilename = datestr(datetime); 
     csvfilename = strrep(csvfilename, ':', '_'); % Strip invalid characters : to _
     table_filename = csvfilename;
+    csvfile =1;
 
     % Set up the timer class 
-    onesecCSVlogger = timer('TimerFcn',{@LTimer_1s, ard, csvfile, csvfilename, handles, table_filename},... 
+    onesecCSVlogger = timer('TimerFcn',{@LTimer_1s, ard, csvfile, csvfilename, handles,table_filename},... 
                             'ExecutionMode','fixedRate','Period', 1); 
     %Call csvlogger function every 1 sec period with ard(Serial port) and csvfilelog (name of csv file) as input 
     start (onesecCSVlogger);

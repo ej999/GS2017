@@ -1,4 +1,4 @@
-function [] = LTimer_1s(~, ~, ard, csvfilename, handles)
+function [] = LTimer_1s(src, evt, ard, csvfile, csvfilename, handles,table_filename)
 %   Function performs the following tasks:
 %   1. If No new serial data is avilable function does nothing
 %   2. if serial data is avilable adds the new data to the .csv file log
@@ -22,7 +22,7 @@ function [] = LTimer_1s(~, ~, ard, csvfilename, handles)
             
         % This function updates table depending on packet 
         % Condition: Glider or Container column 2.
-        tableHandling(csvExt);
+        %tableHandling(csvExt);
         
         
         %Update_GUIDateTimeDisplay(handles);

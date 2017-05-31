@@ -52,8 +52,7 @@ if (ismember('GLIDER', tele{2}))
     matrix.glider(pk, 1) = str2num(tele{1});
     matrix.glider(pk,2) = 0;
     for i = 3:12
-        matrix.glider(pk, i) = str2num(tele{i})
-        
+        matrix.glider(pk, i) = str2num(tele{i}) 
     end
     updateGUI_gliderTable(handles,matrix.glider, pk)
    

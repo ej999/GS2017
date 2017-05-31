@@ -63,15 +63,10 @@ handles.output = hObject;
 
 % Update handles structure
 guidata(hObject, handles);
-axes (handles.logo);
-imshow ('Team_Tomahawk_logo.JPG');
-%CAnada Flag Logo addition
-% axes (handles.CanadaFlag);
-% imshow ('CanadaFlag.png');
-%populate graph
-%axes (handles.Graph1);
+
 % UIWAIT makes gcs2017 wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
+axes(handles.logo);
 % Initial Arduino COMPORT Setup.
 setCOMPort(handles);
 

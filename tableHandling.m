@@ -43,10 +43,10 @@ global matrix
 tele(12) = 0;
 tele = strsplit(packet);
 
-'packet count
+%packet count
 pk = tele(4);
 
-if (tele(2) == 'GLIDER')
+if (tele(2) == 'Glider')
     matrix.glider(pk, 1) = tele(1);
     for i = 3:12
         matrix.glider(pk, i - 1) = tele(i)
@@ -57,10 +57,7 @@ else
         matrix.container(pk, i - 1) = tele(i)
     end
 end
-
-
-
-        updateGUI_gliderTable(handles,matrix.glider)
+        updateGUI_gliderTable(handles,matrix.glider, pk)
 
 
 end

@@ -4,6 +4,7 @@ function [] = tableHandling(packet)
 % guideline for future use.
 % 'glider'. Determines which table to fill on GUI.
 
+fprintf('Entered Table')
 
 %{
 Container
@@ -41,7 +42,7 @@ Glider
 global matrix
 
 tele(12) = 0;
-tele = strsplit(packet);
+tele = strsplit(packet)
 
 %packet count
 pk = tele(4);

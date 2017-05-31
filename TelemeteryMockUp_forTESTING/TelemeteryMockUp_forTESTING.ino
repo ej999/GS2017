@@ -4,6 +4,7 @@
 unsigned int TeamID = 1086; //1. Done
 String Glider = "GLIDER"; // 2
 unsigned long timer = 0;//3.
+unsigned long timer2 = 0;//3.
 unsigned long packetID = 0; // 4
 float altitude = 110;//5 
 float pressure = 101; //6
@@ -19,12 +20,18 @@ void setup() {
   Serial.begin (19200);
 }
 
-void loop() {
+int counter = 0;
 
+void loop() {
+counter = counter +1;
   String test;
-  ++timer;
+
   ++packetID;
+  if (counter < 5){
   Transmit_data();
+  } else {
+    Transmit_data2();
+  }
   if(Serial.available() > 0){
     test= Serial.readString();
     Serial.println(test);
@@ -38,12 +45,45 @@ void loop() {
 
 
 void Transmit_data (){
+    ++timer;
   String toradio = "";
   toradio += TeamID;
   toradio += ",";
   toradio += Glider;
   toradio += ",";
   toradio += timer;
+  toradio += ",";
+  toradio += packetID;
+  toradio += ",";
+  toradio += altitude;
+  toradio += ",";
+  toradio += pressure;
+  toradio += ",";
+  toradio += pitot_speed;
+  toradio += ",";
+  toradio += temp;
+  toradio += ",";
+  toradio += voltage;
+  toradio += ",";
+  toradio += heading;
+  toradio += ",";
+  toradio += state;
+  toradio += ",";
+  toradio += bonus;
+  Serial.println (toradio);
+
+
+  
+}
+
+void Transmit_data2 (){
+    ++timer2;
+  String toradio = "";
+  toradio += TeamID;
+  toradio += ",";
+  toradio += "CONTAINER";
+  toradio += ",";
+  toradio += timer2;
   toradio += ",";
   toradio += packetID;
   toradio += ",";

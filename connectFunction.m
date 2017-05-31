@@ -6,6 +6,9 @@ function [ard] = connectFunction(comport, handles)
 %   3. Outputs csvfile log name for reference
 %   4. Also outputs timer object for reference
 
+
+
+
 % comportmand line display
 display('Connecting...');
 
@@ -42,6 +45,13 @@ if (error == false)
     %Call csvlogger function every 1 sec period with ard(Serial port) and csvfilelog (name of csv file) as input 
     start (onesecCSVlogger);
    % grid(handles.Graph1, 'on');
+   
+
+   
+   
+   
+   
+   
 end
 
 end

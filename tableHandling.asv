@@ -4,7 +4,8 @@ function [] = tableHandling(packet)
 % guideline for future use.
 % 'glider'. Determines which table to fill on GUI.
 
-printf("En
+fprintf('Entered Table')
+
 %{
 Container
 ---------------
@@ -40,21 +41,29 @@ Glider
 
 global matrix
 
-tele(12) = 0;
-tele = strsplit(packet)
+tele = strsplit(packet, ',')
+
+
+telem = strread(packet,'%s','delimiter','-')
+
+    tele2(1) = str2num(tele{1})
+for i = 3:12
+    tele2(i - 1) = str2num(tele{i})
+    
+end
 
 %packet count
-pk = tele(4);
+pk = tele2(3);
 
-if (tele(2) == 'Glider')
-    matrix.glider(pk, 1) = tele(1);
+if (tele{2} == 'GLIDER')
+    matrix.glider(pk, 1) = tele2(1);
     for i = 3:12
-        matrix.glider(pk, i - 1) = tele(i)
+        matrix.glider(pk, i - 1) = tele2(i)
     end
 else
-    matrix.container(pk, 1) = tele(1);
+    matrix.container(pk, 1) = tele2(1);
     for i = 3:12
-        matrix.container(pk, i - 1) = tele(i)
+        matrix.container(pk, i - 1) = tele2(i)
     end
 end
         updateGUI_gliderTable(handles,matrix.glider, pk)

@@ -16,7 +16,5 @@ function [ ] = stopTimerFunction()
     end
 
     fclose('all'); % Close current open files
-    msgbox('Stop Timer button clicked!');
-
 end
 

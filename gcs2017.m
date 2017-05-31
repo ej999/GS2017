@@ -22,7 +22,7 @@ function varargout = gcs2017(varargin)
 
 % Edit the above text to modify the response to help gcs2017
 
-% Last Modified by GUIDE v2.5 29-May-2017 18:49:20
+% Last Modified by GUIDE v2.5 31-May-2017 16:51:49
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -43,6 +43,12 @@ else
 end
 % End initialization code - DO NOT EDIT
 
+% --- Executes during object deletion, before destroying properties.
+function figure1_DeleteFcn(hObject, eventdata, handles)
+% hObject    handle to figure1 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+StopTimerButtonfunc();
 
 % --- Executes just before gcs2017 is made visible.
 function gcs2017_OpeningFcn(hObject, eventdata, handles, varargin)
@@ -251,3 +257,10 @@ function axes1_CreateFcn(hObject, eventdata, handles)
 % handles    empty - handles not created until after all CreateFcns called
 
 % Hint: place code in OpeningFcn to populate axes1
+
+
+% --- Executes during object creation, after setting all properties.
+function uitableContainer_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to uitableContainer (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called

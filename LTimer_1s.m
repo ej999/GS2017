@@ -19,7 +19,7 @@ function [] = LTimer_1s(~, ~, ard, csvfilename, handles)
         % Update Functions must be below to minimize timer objects
         % This section is called every 1 sec, Therefore plots are updates 1sec
         % 'StringFromSeriald' variable contains new lines of serial string from radio
-        
+            
         % This function updates table depending on packet 
         % Condition: Glider or Container column 2.
         tableHandling(csvExt);

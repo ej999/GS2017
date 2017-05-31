@@ -17,7 +17,6 @@ function [] = tableHandling(csvExt)
             % matrix.
 
             dataMatrixGlider = [dataMatrixGlider; dataMatrixRaw(i,:)];
-      
             updateGUI_gliderTable(handles,dataMatrixGlider)
         else
             % call update Container table

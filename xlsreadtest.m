@@ -5,7 +5,6 @@ format longG;
 [rows, cols] = size(dataMatrixRaw);
 
 dataMatrixGlider = [];
-dataMatrixRaw;
 tic
 for i = 1:1:rows
     if ismember('glider',dataMatrixRaw(i,2))

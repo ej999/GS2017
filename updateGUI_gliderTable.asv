@@ -1,10 +1,9 @@
 function [] = updateGUI_gliderTable(handles, dataMatrixGlider, pk)
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
-
-data = num2cell(dataMatrixGlider(1:pk,1:12));
-%data = dataMatrixGlider(1:pk,1:12);
-data(:,2) = cellstr('GLIDER');
+data = cell(pk, 11)
+data = dataMatrixGlider(1:pk,1:11);
+data(2,1) = {'GLIDER'}
 set(handles.uitableGlider, 'Data', data);
 end
 

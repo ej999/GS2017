@@ -21,7 +21,7 @@ function varargout = gcs2017(varargin)
 
 % Edit the above text to modify the response to help gcs2017
 
-% Last Modified by GUIDE v2.5 31-May-2017 17:11:15
+% Last Modified by GUIDE v2.5 31-May-2017 22:08:44
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -271,3 +271,24 @@ function uitableContainer_CreateFcn(hObject, eventdata, handles)
 % hObject    handle to uitableContainer (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
+
+
+% --- Executes during object creation, after setting all properties.
+function figure1_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to figure1 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+% This creates the 'background' axes
+ha = axes('units','normalized', ...
+            'position',[0 0 1 1]);
+% Move the background axes to the bottom
+uistack(ha,'bottom');
+% Load in a background image and display it using the correct colors
+% The image used below, is in the Image Processing Toolbox.  If you do not have %access to this toolbox, you can use another image file instead.
+I=imread('background.jpg');
+hi = imagesc(I)
+colormap gray
+% Turn the handlevisibility off so that we don't inadvertently plot into the axes again
+% Also, make the axes invisible
+set(ha,'handlevisibility','off', ...
+            'visible','off')

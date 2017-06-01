@@ -18,9 +18,9 @@ handles.yContainer = handles.containerData(:,yAxis+2);
 
 grid(handles.Graph1, 'on');
 
-plot(handles.xGlider, handles.yGlider, '-b','Parent', handles.Graph1);
+plot(handles.xGlider, handles.yGlider, '.-b','Parent', handles.Graph1);
 hold(handles.Graph1,'on');
-plot(handles.xContainer, handles.yContainer, '-r','Parent', handles.Graph1);
+plot(handles.xContainer, handles.yContainer, '.-r','Parent', handles.Graph1);
 % plot(cell2mat(handles.xGlider), cell2mat(handles.yGlider), '.','Parent', handles.Graph1);
 % %plot(cell2mat(handles.xContainer), cell2mat(handles.yContainer), '.', 'Parent', handles.Graph1);
 

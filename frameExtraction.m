@@ -1,11 +1,17 @@
 function [] = frameExtraction()
-%UNTITLED2 Summary of this function goes here
-%   Detailed explanation goes here
-file = 'source.mp4';
-video=VideoReader(file);
-    for f=1:20
+% Alternatively, you can take filename as a parameter.
+    tic
+    file = 'source.mp4';
+    video=VideoReader(file);
+    totalFrames = video.Numberofframes();
+    steps = ceil(totalFrames/20)
+%     while steps*20 <=totalFrames
+%         steps = steps+1;
+%     end
+    for f=1:steps:totalFrames  
       image=read(video,f);
-      thisfile=sprintf('frame_%04d.jpg',f);
+      thisfile=sprintf('frame_%d.jpg',f);
       imwrite(image,thisfile);
     end
+    toc
 end

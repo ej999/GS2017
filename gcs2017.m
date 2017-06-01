@@ -2,7 +2,6 @@ function varargout = gcs2017(varargin)
 % GCS2017 MATLAB code for gcs2017.fig
 %      GCS2017, by itself, creates a new GCS2017 or raises the existing
 %      singleton*.
-%      helo
 %      H = GCS2017 returns the handle to a new GCS2017 or the handle to
 %      the existing singleton*.
 %
@@ -118,6 +117,7 @@ function arduinoConnectButton_Callback(hObject, eventdata, handles)
 % hObject    handle to arduinoConnectButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
 global ard;
 selectedPort = get(handles.COMSelect,'Value');
 Portlist = get(handles.COMSelect,'String');

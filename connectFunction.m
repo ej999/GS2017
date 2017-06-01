@@ -7,8 +7,7 @@ function [ard] = connectFunction(comport, handles)
 %   4. Also outputs timer object for reference
 
 
-
-
+GlobalDeclarations;
 % comportmand line display
 display('Connecting...');
 

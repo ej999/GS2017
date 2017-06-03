@@ -41,6 +41,7 @@ Glider
 global matrix;
 
 tele = strsplit(packet, ',');
+isDeployed = 0;
 
 
 %packet count
@@ -61,6 +62,15 @@ else
         matrix.container(pk, i) = str2num(tele{i});
     end
     
+    if (matrix.container(pk, 9) == 1 && isDeployed == 0)
+        isDeployed = 1;
+        set(handles.deploymentButton, 'BackgroundColor', [0.26 0.96 0.49]);
+        set(handles.deploymentButton, 'String', 'Is Deployed: T');
+        msgbox('Glider has been deployed!');
+
+    else 
+        set(handles.deploymentButton, 'BackgroundColor','yellow');
+    end
     updateGUI_containerTable(handles,matrix.container, pk)
 end
    

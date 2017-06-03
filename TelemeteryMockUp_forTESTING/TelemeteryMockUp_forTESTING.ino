@@ -4,7 +4,7 @@
 unsigned int TeamID = 1086; //1. Done
 String Glider = "GLIDER"; // 2
 unsigned long timer = 0;//3.
-unsigned long timer2 = 0;//3.
+unsigned long timer2 = timer;//3.
 unsigned long packetID = 0; // 4
 float altitude = 110;//5 
 float pressure = 101; //6
@@ -14,6 +14,7 @@ float voltage = 7.5;//9.
 float heading = 25; //10
 float state = 5; //11
 float bonus = 1; //12
+float deploy = 0;
 //Servo servo1;
 void setup() {
   //servo1.attach(8);
@@ -27,10 +28,10 @@ counter = counter +1;
   String test;
 
   ++packetID;
-  if (counter < 5){
-  Transmit_data();
+  if (counter < 11){
+  Transmit_data2();
   } else {
-    Transmit_data2();
+    Transmit_data();
   }
   if(Serial.available() > 0){
     test= Serial.readString();
@@ -78,6 +79,9 @@ void Transmit_data (){
 
 void Transmit_data2 (){
     ++timer2;
+    if (timer2 == 10) {
+      deploy =1;
+    }
   String toradio = "";
   toradio += TeamID;
   toradio += ",";
@@ -95,7 +99,7 @@ void Transmit_data2 (){
   toradio += ",";
   toradio += temp;
   toradio += ",";
-  toradio += voltage;
+  toradio += deploy;
   toradio += ",";
   toradio += heading;
   toradio += ",";

@@ -26,7 +26,7 @@ int counter = 0;
 void loop() {
 counter = counter +1;
   String test;
-
+  String checkWorks;
   ++packetID;
   if (counter < 11){
   Transmit_data2();

@@ -21,7 +21,7 @@ function varargout = gcs2017(varargin)
 
 % Edit the above text to modify the response to help gcs2017
 
-% Last Modified by GUIDE v2.5 04-Jun-2017 17:11:32
+% Last Modified by GUIDE v2.5 04-Jun-2017 18:52:10
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -323,3 +323,11 @@ function endBurn_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 global ard;
 fprintf('%c\n', 'E');
+
+
+% --- Executes on button press in takePicture.
+function takePicture_Callback(hObject, eventdata, handles)
+% hObject    handle to takePicture (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+

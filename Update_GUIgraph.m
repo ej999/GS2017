@@ -8,6 +8,9 @@ handles.gliderData = matrix.glider;
 handles.containerData = matrix.container;
 xAxis = get(handles.graphxAxis, 'Value');
 yAxis = get(handles.graphyAxis, 'Value');
+
+handles.xGlider = handles.gliderData(:,xAxis+2);
+handles.yGlider = handles.gliderData(:,yAxis+2);
 %-- 
 switch xAxis
     case 1
@@ -20,6 +23,12 @@ switch xAxis
         handles.xContainer = handles.containerData(:,6);
     case 7
         handles.xContainer = handles.containerData(:,7);
+    case 9
+        handles.xGlider = 0;
+        handles.xContainer = handles.containerData(:,10);
+    case 10
+        handles.xGlider = 0;
+        handles.xContainer = handles.containerData(:,11);
     otherwise 
         handles.xContainer = 0;
 end
@@ -34,17 +43,23 @@ switch yAxis
         handles.yContainer = handles.containerData(:,6);
     case 7
         handles.yContainer = handles.containerData(:,7);
+    case 9
+        handles.yGlider = 0;
+        handles.yContainer = handles.containerData(:,10);
+    case 10
+        handles.yGlider = 0;
+        handles.yContainer = handles.containerData(:,11);
     otherwise 
         handles.yContainer = 0;
 end
 %--
 
-handles.xGlider = handles.gliderData(:,xAxis+2);
-handles.yGlider = handles.gliderData(:,yAxis+2);
 cla(handles.Graph1);
 
 grid(handles.Graph1, 'on');
-plot(handles.xGlider, handles.yGlider, '.-b','Parent', handles.Graph1);
+if (handles.xGlider & handles.yGlider) ~= 0
+    plot(handles.xGlider, handles.yGlider, '.-b','Parent', handles.Graph1);
+end
 hold(handles.Graph1,'on');
 
 if (handles.xContainer & handles.yContainer) ~= 0

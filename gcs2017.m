@@ -21,7 +21,7 @@ function varargout = gcs2017(varargin)
 
 % Edit the above text to modify the response to help gcs2017
 
-% Last Modified by GUIDE v2.5 02-Jun-2017 19:10:08
+% Last Modified by GUIDE v2.5 04-Jun-2017 17:11:32
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -218,13 +218,13 @@ function stopTimer_Callback(hObject, eventdata, handles)
 stopTimerFunction();
 
 
-% --- Executes on button press in pushbutton4.
-function pushbutton4_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton4 (see GCBO)
+% --- Executes on button press in startBurn.
+function startBurn_Callback(hObject, eventdata, handles)
+% hObject    handle to startBurn (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 global ard;
-fopen(ard);
+fprintf('%c\n', 'B');
  
 
 
@@ -316,8 +316,10 @@ function property_SizeChangedFcn(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 
-% --- Executes on button press in pushbutton6.
-function pushbutton6_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton6 (see GCBO)
+% --- Executes on button press in endBurn.
+function endBurn_Callback(hObject, eventdata, handles)
+% hObject    handle to endBurn (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+global ard;
+fprintf('%c\n', 'E');

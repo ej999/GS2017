@@ -42,7 +42,6 @@ function [ard] = connectFunction(comport, handles)
                                 'ExecutionMode','fixedRate','Period', 1); 
         %Call csvlogger function every 1 sec period with ard(Serial port) and csvfilelog (name of csv file) as input 
         start (onesecCSVlogger);
-       % grid(handles.Graph1, 'on');
     end
 end
 

@@ -53,7 +53,7 @@ if (ismember('GLIDER', tele{2}))
     for i = 3:12
         matrix.glider(pk, i) = str2num(tele{i}) ;
     end
-    updateGUI_gliderTable(handles,matrix.glider, pk)
+    updateGUI_gliderTable(handles,matrix.glider, pk);
    
 else
     matrix.container(pk, 1) = str2num(tele{1});
@@ -71,7 +71,7 @@ else
     else 
         set(handles.deploymentButton, 'BackgroundColor','yellow');
     end
-    updateGUI_containerTable(handles,matrix.container, pk)
+    updateGUI_containerTable(handles,matrix.container, pk);
 end
    
 

@@ -58,7 +58,7 @@ if (ismember('GLIDER', tele{2}))
 else
     matrix.container(pk, 1) = str2num(tele{1});
     matrix.container(pk,2) = 0;
-    for i = 3:12
+    for i = 3:11
         matrix.container(pk, i) = str2num(tele{i});
     end
     

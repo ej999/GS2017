@@ -104,8 +104,6 @@ void Transmit_data2 (){
   toradio += heading;
   toradio += ",";
   toradio += state;
-  toradio += ",";
-  toradio += bonus;
   Serial.println (toradio);
 
 

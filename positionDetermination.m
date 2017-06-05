@@ -1,7 +1,4 @@
-function [ ] = positionDetermination(pk)
-%UNTITLED3 Summary of this function goes here
-%   Detailed explanation goes here
-
+function [pos_x, pos_y] = positionDetermination(pk)
     vel = matrix.glider(:,6); % Velocity from pitot tube
     heading = matrix.glider(:,9); % Direction from magnometer (degrees)
     pitch = matrix.glider(:,13); % Placeholder for pitch data (degrees)
@@ -10,13 +7,17 @@ function [ ] = positionDetermination(pk)
     dy(pk) = vel(pk) * sind(heading(pk)) * cosd(pitch(pk));
     dz(pk) = vel(pk) * sind(pitch(pk));
 
-    px = 0; % Original position, to be set to container GPS location at time of deployment
-    py = 0;
-
-    px = cumsum(dx); % Summation of delta changes in x,y,z position
-    py = cumsum(dy);
-    pz = cumsum(dz);
-
+    pos_x(pk) = cumsum(dx(pk)); % Summation of delta changes in x,y,z position
+    pos_y(pk) = cumsum(dy(pk));
+    pos_z(pk) = cumsum(dz(pk));
     
+    lat_pos(pk) = (pos_x(pk) / 111000) + releaseLat;
+    lon_pos(pk) = (pos_y(pk) / (111000 * cos(32.25))) + releaseLon;
+
 end
+
+%     tx = cumsum(dx); % Plots full trajectory
+%     ty = cumsum(dy);
+%     tz = cumsum(dz);
+%     plot3(tx,ty,tz) 
 

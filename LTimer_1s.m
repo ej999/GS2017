@@ -3,6 +3,7 @@ function [] = LTimer_1s(src, evt, ard, csvfile, csvfilename, handles,table_filen
 %   1. If No new serial data is avilable function does nothing
 %   2. if serial data is avilable adds the new data to the .csv file log
 %   display ('csvlogger');
+    global matrix;
     csvExt = strcat(csvfilename,'.csv');
     if (ard.BytesAvailable <= 0) % If no new data
         display ('No New data in Serial port');

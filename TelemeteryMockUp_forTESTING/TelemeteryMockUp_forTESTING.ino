@@ -14,7 +14,10 @@ float voltage = 7.5;//9.
 float heading = 25; //10
 float state = 5; //11
 float bonus = 1; //12
+float pitch = -1;
 float deploy = 0;
+float latitude = 32.25;
+float longitude = -98.2;
 //Servo servo1;
 void setup() {
   //servo1.attach(8);
@@ -28,7 +31,7 @@ counter = counter +1;
   String test;
   String checkWorks;
   ++packetID;
-  if (counter < 11){
+  if (counter < 4){
   Transmit_data2();
   } else {
     Transmit_data();
@@ -71,6 +74,8 @@ void Transmit_data (){
   toradio += state;
   toradio += ",";
   toradio += bonus;
+  toradio += ",";
+  toradio += pitch;
   Serial.println (toradio);
 
 
@@ -79,7 +84,7 @@ void Transmit_data (){
 
 void Transmit_data2 (){
     ++timer2;
-    if (timer2 == 10) {
+    if (timer2 == 3) {
       deploy =1;
     }
   String toradio = "";
@@ -101,9 +106,9 @@ void Transmit_data2 (){
   toradio += ",";
   toradio += deploy;
   toradio += ",";
-  toradio += heading;
+  toradio += latitude;
   toradio += ",";
-  toradio += state;
+  toradio += longitude;
   Serial.println (toradio);
 
 

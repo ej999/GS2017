@@ -55,8 +55,8 @@ end
 %--
 
 cla(handles.Graph1);
-
 grid(handles.Graph1, 'on');
+    
 if (handles.xGlider & handles.yGlider) ~= 0
     plot(handles.xGlider, handles.yGlider, '.-b','Parent', handles.Graph1);
 end
@@ -65,5 +65,6 @@ hold(handles.Graph1,'on');
 if (handles.xContainer & handles.yContainer) ~= 0
     plot(handles.xContainer, handles.yContainer, '.-r','Parent', handles.Graph1);
 end
+
 end
 

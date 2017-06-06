@@ -168,7 +168,7 @@ autoAxis = 1;
 showLabels = 1;
 language = '';
 markeridx = 1;
-markerlist = strcat(pos_yString, {', '}, pos_xString)
+markerlist = strcat(pos_yString, {', '}, pos_xString);
 % markerlist = {'32.25, -98.2'};
 style = '';
 

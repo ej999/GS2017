@@ -31,8 +31,10 @@ counter = counter +1;
   String test;
   String checkWorks;
   ++packetID;
-  if (counter < 4){
-  Transmit_data2();
+  if (counter < 20 && !(counter == 10)){
+    Transmit_data2();
+  } else if (counter==10) {
+    Transmit_Emptydata();
   } else {
     Transmit_data();
   }
@@ -84,7 +86,7 @@ void Transmit_data (){
 
 void Transmit_data2 (){
     ++timer2;
-    if (timer2 == 3) {
+    if (timer2 == 10) {
       deploy =1;
     }
   String toradio = "";
@@ -110,7 +112,37 @@ void Transmit_data2 (){
   toradio += ",";
   toradio += longitude;
   Serial.println (toradio);
+}
+
+void Transmit_Emptydata (){
+   ++timer2;
+    if (timer2 == 10) {
+      deploy =1;
+    }
+  String toradio = "";
+  toradio += TeamID;
+  toradio += ",";
+  toradio += "CONTAINER";
+  toradio += ",";
+  toradio += timer2;
+  toradio += ",";
+  toradio += 0;
+  toradio += ",";
+  toradio += altitude;
+  toradio += ",";
+  toradio += pressure;
+  toradio += ",";
+  toradio += pitot_speed;
+  toradio += ",";
+  toradio += temp;
+  toradio += ",";
+  toradio += deploy;
+  toradio += ",";
+  toradio += latitude;
+  toradio += ",";
+  toradio += longitude;
+  Serial.println (toradio);
+}
 
 
   
-}

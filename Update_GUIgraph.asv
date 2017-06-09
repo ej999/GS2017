@@ -65,7 +65,7 @@ grid(handles.Graph1, 'on');
 % To fix the plotting issue, try to change all rows to only the previous
 % row in the switch statement above. 
 % if (handles.xGlider & handles.yGlider) ~= 0 % Old If
-% if (matrix.glider(end,4) ~= 0 % New if
+% if (matrix.glider(end,:
     plot(handles.xGlider, handles.yGlider, '.-b','Parent', handles.Graph1);
 % end
 hold(handles.Graph1,'on');

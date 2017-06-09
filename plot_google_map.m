@@ -118,7 +118,7 @@ function varargout = plot_google_map(varargin)
 % Version 1.1 - 25/08/2011
 
 global matrix;
-pk = matrix.glider(end, 3);
+pk = matrix.glider(end, 4);
 [pos_y , pos_x] = positionDetermination(pk);
 pos_xString = num2str(pos_x(pk));
 pos_yString = num2str(pos_y(pk));

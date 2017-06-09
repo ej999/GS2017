@@ -26,6 +26,5 @@ function [] = LTimer_1s(src, evt, ard, csvfile, csvfilename, handles,table_filen
         tableHandling(StringFromSerial, handles);
         Update_GUIDateTimeDisplay(handles);
         Update_GUIgraph(handles);
-
     end 
 end

@@ -9,7 +9,7 @@ availPorts = info.SerialPorts; % Returns matrix
 
 if (numel(availPorts) ~=0)
     set(handles.COMSelect, 'String', availPorts);
-    set(handles.COMSelect, 'Value', numel(availPorts));
+    set(handles.COMSelect, 'Value', 1);
 else
     set(handles.COMSelect, 'String', 'PORTS EMPTY');
     set(handles.COMSelect, 'Value', 1);    

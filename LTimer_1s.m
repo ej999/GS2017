@@ -25,6 +25,6 @@ function [] = LTimer_1s(src, evt, ard, csvfile, csvfilename, handles,table_filen
         % Condition: Glider or Container column 2.
         tableHandling(StringFromSerial, handles);
         Update_GUIDateTimeDisplay(handles);
-        Update_GUIgraph(handles);
+       Update_GUIgraph(handles);
     end 
 end

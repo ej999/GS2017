@@ -5,6 +5,7 @@ function [] = Update_GUIDateTimeDisplay(handles)
 
 time = datestr(datetime); % Get the current date and time as String
 %time = strrep(spacetime,':', '_'); % Remove all unn
-set(handles.DateTimeDisplay, 'String', time);
+% set(handles.DateTimeDisplay, 'String', time);
+set(handles.DateTimeDisplay, 'String', 'Sunday March 5th');
 end
 

@@ -64,8 +64,6 @@ if pk == 0
         plot_google_map('axis', handles.map)
         set(0,'DefaultFigureVisible', 'on')
         
-        lastDevice = 'G';
-        
         
     else
         pk = matrix.container(end,4);
@@ -86,7 +84,6 @@ if pk == 0
             set(handles.deploymentButton, 'BackgroundColor','yellow');
         end
         updateGUI_containerTable(handles,matrix.container, pk+1);
-        lastDevice = 'C';
     end
      
 else
@@ -98,9 +95,9 @@ else
             matrix.glider(pk, i) = str2num(tele{i}) ;
         end
         updateGUI_gliderTable(handles,matrix.glider, pk);
-        set(0,'DefaultFigureVisible', 'off')
-        plot_google_map('axis', handles.map)
-        set(0,'DefaultFigureVisible', 'on')
+%         set(0,'DefaultFigureVisible', 'off')
+%         plot_google_map('axis', handles.map)
+%         set(0,'DefaultFigureVisible', 'on')
         
         lastDevice = 'G';
         
